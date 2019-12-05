@@ -12,8 +12,17 @@ Once initialized the DB, please start the DB with the below command. [IMP: Refer
 
 "<PostgresDB setup/downloaded path>\bin\pg_ctl" -D "<PG_DATA PATH>" -l logfile start
 
+###Update: Postgres DB can be started using the below mentioned bat file as well.
+postgresql_startup.bat
+
 
 ###Step 4:
-##Login to new Database.
+##Login to new Database. Once login, you can create database, DB users, tables and other DB objects.
 psql -U postgres
 
+###Step 5:
+###Stop the database.
+"<PostgresDB setup/downloaded path>\bin\pg_ctl" -D "<PG_DATA PATH>" -l logfile stop
+
+###Update: Postgres DB can be stopped using the below mentioned bat file as well.
+postgresql_stop.bat
