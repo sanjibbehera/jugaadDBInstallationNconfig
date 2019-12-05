@@ -1,0 +1,16 @@
+processManagement:
+   #fork: true
+   pidFilePath: "C:\\Users\\SA341762\\Downloads\\mongodb-4.2.1\\mongo.pid"
+net:
+   bindIp: localhost
+   port: 27017
+systemLog:
+   destination: file
+   path: "C:\\Users\\SA341762\\Downloads\\mongodb-4.2.1\\log\\mongod.log"
+   logAppend: true
+security:
+   authorization: enabled
+storage:
+   dbPath: C:\Users\SA341762\Downloads\mongodb-4.2.1\data
+   journal:
+      enabled: true
