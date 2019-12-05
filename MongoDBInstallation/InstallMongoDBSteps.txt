@@ -1,0 +1,63 @@
+### Step 1:
+###At the time of creation of this file MongoDB 4.2.1 version is the latest version
+### Download the latest MongoDB version 4.2.1
+### Use link https://www.mongodb.com/dr/fastdl.mongodb.org/win32/mongodb-win32-x86_64-2012plus-4.2.1.zip/download
+
+### HINT: Unzip the file into a directory for mongo executables files. 
+### For eg. In my case it is “C:\Users\SANJIB\Downloads\mongodb-4.2.1”. so it will be the MONGODB PATH.
+
+### Step 2:
+###Create a batch file named “startMongoDB.bat” and add the below content.
+set PATH="<MONGODBPATH>\bin";%PATH%
+mongod --config "<MONGODBPATH>\mongo.yml"    
+
+#### [IMP NOTE: MONGO DB can run from config ini file as well, but I am using the current configuration standards to use YAML File, 
+#### hence mongo.yml]
+#### [Also, the above yml file authorization is disabled such that once mongodb runs, we can create a DB user and 
+#### then reboot with a yml file where authorization is enabled.]
+
+
+#### Step 3:
+#### Run the batch file to start the MongoDB. 
+#### [before that make sure the log directory and data directory should be created or else the DB will not start.]
+
+> startMongoDB.bat
+
+### Step 4: Verify the log file, if the DB has started correctly.
+
+### Step 5: 
+### Use the mongo client to connect the DB.
+
+> mongo 
+### [ using no options since the DB is created using default host and mongodb default port 27017, for more info, you can refer mongo.yml]
+
+### Step 6: 
+#### Create DB user. [IMP: you can create Mongo DB user only in admin database]
+
+>> use admin;
+>> db.createUser(
+  {
+    user: "useradmin",
+    pwd: "useradmin",
+    roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+  }
+);
+
+### Step 7: 
+#### Shutdown the database.
+
+>>	use admin;
+>> db.shutdownServer();
+>> exit from command prompt of mongo shell.
+
+
+### Step 8:
+#### Use a yml file where authorization is enabled to startup the Database, you need to adapt the batch file with below
+
+>>	mongod --config ""<MONGODBPATH>\mongoWithAuthorizationEnabled.yml"
+
+### Step 9:
+#### Login with mongo client by passing DB credentials.
+
+>>	mongo –u useradmin –p useradmin
+
