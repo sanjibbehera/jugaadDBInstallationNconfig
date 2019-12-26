@@ -1,14 +1,14 @@
 ### Step 1:
-###At the time of creation of this file MongoDB 4.2.1 version is the latest version
-### Download the latest MongoDB version 4.2.1
-### Use link https://www.mongodb.com/dr/fastdl.mongodb.org/win32/mongodb-win32-x86_64-2012plus-4.2.1.zip/download
+### At the time of creation of this file MongoDB 4.2.1 version is the latest version  
+Download the latest MongoDB version 4.2.1  
+Use link https://www.mongodb.com/dr/fastdl.mongodb.org/win32/mongodb-win32-x86_64-2012plus-4.2.1.zip/download
 
 ### HINT: Unzip the file into a directory for mongo executables files. 
 ### For eg. In my case it is “C:\Users\SANJIB\Downloads\mongodb-4.2.1”. so it will be the MONGODB PATH.
 
 ### Step 2:
-###Create a batch file named “startMongoDB.bat” and add the below content.
-set PATH="<MONGODBPATH>\bin";%PATH%
+### Create a batch file named “startMongoDB.bat” and add the below content.  
+set PATH="<MONGODBPATH>\bin";%PATH%  
 mongod --config "<MONGODBPATH>\mongo.yml"    
 
 #### [IMP NOTE: MONGO DB can run from config ini file as well, but I am using the current configuration standards to use YAML File, 
