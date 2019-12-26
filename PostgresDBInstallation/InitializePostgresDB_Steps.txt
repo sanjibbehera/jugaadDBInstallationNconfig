@@ -1,28 +1,28 @@
-###Step 1: 
+### Step 1: 
 
 ### Download the executable binary zip files.
 The required postgres version to be installed can be downloaded from the URL “https://www.enterprisedb.com/download-postgresql-binaries”.
 
-###Step 2:
+### Step 2:
 
 Use the postgresql_initialize.bat file to initialize the PostgreSQL DB.
 
-###Step 3:
+### Step 3:
 Once initialized the DB, please start the DB with the below command. [IMP: Refer the correct path from the initialize batch file]
 
 "<PostgresDB setup/downloaded path>\bin\pg_ctl" -D "<PG_DATA PATH>" -l logfile start
 
-###Update: Postgres DB can be started using the below mentioned bat file as well.
+### Update: Postgres DB can be started using the below mentioned bat file as well.
 postgresql_startup.bat
 
 
-###Step 4:
-##Login to new Database. Once login, you can create database, DB users, tables and other DB objects.
+### Step 4:
+## Login to new Database. Once login, you can create database, DB users, tables and other DB objects.
 psql -U postgres
 
-###Step 5:
-###Stop the database.
+### Step 5:
+### Stop the database.
 "<PostgresDB setup/downloaded path>\bin\pg_ctl" -D "<PG_DATA PATH>" -l logfile stop
 
-###Update: Postgres DB can be stopped using the below mentioned bat file as well.
+### Update: Postgres DB can be stopped using the below mentioned bat file as well.
 postgresql_stop.bat
