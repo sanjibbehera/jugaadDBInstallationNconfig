@@ -1,13 +1,16 @@
-#### Step 1. Download the non-installer zip file.
+#### Step 1. Download the non-installer zip file for MySQL 8.0 version.
 Download non-installer .zip version from dev.mysql.com
 
-#### Step 2. Create folder to store the files.
+#### Step 2. after unzippping the files, initialize the Mysql DB with the below command from bin directory.
+mysqld --initialize
+
+#### Step 3. Create folder to store the files.
 create a directory c:\mysql and c:\mysql\tmp
 unzip the content of the zip file inside c:\mysql
 
-#### Step 3. Create a data folder inside c:\mysql
+#### Step 4. Create a data folder inside c:\mysql
 
-#### Step 4. create a config.ini file under c:\mysql\data with the below content.
+#### Step 5. create a config.ini file under c:\mysql\data with the below content.
 [mysqld]
 datadir=c:/mysql/data
 tmpdir=c:/mysql/tmp
@@ -16,5 +19,5 @@ port=13306
 slow-start-timeout=0
 log-warnings=2
 
-#### Step 5. As we do not have admin rights, we will create start/stop scripts to start/stop the new MYSQL DB.
+#### Step 6. As we do not have admin rights, we will create start/stop scripts to start/stop the new MYSQL DB.
 Please see the attached start and stop scripts to start and stop mysql DB.
