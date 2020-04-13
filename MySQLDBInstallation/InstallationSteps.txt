@@ -21,3 +21,5 @@ log-warnings=2
 
 #### Step 6. As we do not have admin rights, we will create start/stop scripts to start/stop the new MYSQL DB.
 Please see the attached start and stop scripts to start and stop mysql DB.
+
+#### Important note, do look out for the temporary password for the root user, once you find it, login & change the password.
